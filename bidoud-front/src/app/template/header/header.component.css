@@ -1,0 +1,14 @@
+.nav-link{
+  text-transform: uppercase;
+  color: rgba(242, 8, 0, 0.56);
+  font-weight: bold;
+}
+.nav-item a{
+  color: rgba(0, 0, 0, 0.5);
+}
+.navbar-nav > .active > a {
+  color: #ffd507;
+}
+.nav-item > a:hover {
+  color: #ffd507;
+}

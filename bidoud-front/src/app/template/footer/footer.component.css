@@ -1,0 +1,28 @@
+.fa{
+  font-size:35px;
+  color: black;
+}
+.icon-transition:hover i{
+  color: rgb(224, 168, 0);
+  transition: 1s;
+}
+.footer-text{
+  font-size: 20px;
+  letter-spacing: 5px;
+}
+.flex-shrink-0{
+
+}
+.contact{
+  animation: move 4s ;
+}
+
+@keyframes move{
+  0%{
+    transform: scale(0) ;
+  }
+  100%{
+    transform: scale(1);
+
+  }
+}

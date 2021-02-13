@@ -1,0 +1,88 @@
+<nz-spin nzTip="Loading..." [nzSize]="'large'" style="margin-top: 25%;margin-bottom: 25%" [class.spin]="!spinning" [nzSpinning]="spinning">
+</nz-spin>
+
+<div *ngIf="!spinning && work!=null">
+  <div class="article-container">
+    <div class="jumbotron bg-cover text-white" [ngStyle]="{backgroundImage: 'url(' + work?.content[0] + ')'}">
+      <div class="container py-5 text-center" style="background-color: rgba(0,0,0,0.31)">
+        <h1 class="display-4 font-weight-bold">{{work?.title}}</h1>
+        <p class="mb-0" style="font-size: 19px">In {{work?.categories}}</p>
+        <!--<p class="font-italic" style="font-size: 20px">Snippe by
+          <a href="https://bootstrapious.com" class="text-white">
+            <u>Bootstrapious</u>
+          </a>
+        </p>-->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- For Demo Purpose -->
+  <div class="timeline">
+    <div class="container py-5 ">
+      <h2 class="h3 font-weight-bold text-center title" style="margin-bottom: 5%">Description</h2>
+      <div class="row">
+        <div class="col-lg-10 mb-4">
+          <div class="text-muted" [innerHTML]="work?.description| safeHtml">{{work?.description}}</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container py-5">
+      <h2 class="h3 font-weight-bold text-center title" >Details</h2>
+      <div class="">
+        <section class="mbr-gallery mbr-slider-carousel cid-rba0NabUEs" id="gallery2-4">
+          <div>
+            <div class="pt-1">
+              <div class="">
+                <div class="mbr-gallery-layout-default" >
+                  <div>
+                    <div>
+                      <div class="mbr-gallery-item flip-card" data-video-url="false" data-tags="Responsive" *ngFor="let det  of work?.content;let index=index">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front" href="#lb-gallery2-4" data-slide-to="{{index}}" data-toggle="modal">
+                            <img [src]="det" alt="Avatar" height="300" width="500">
+                            <span class="icon-focus"></span>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </div><!-- Lightbox -->
+              <div data-app-prevent-settings="" class="mbr-slider modal fade carousel slide" tabindex="-1"
+                   data-keyboard="true" data-interval="false" id="lb-gallery2-4">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <div class="carousel-inner">
+                        <div class="carousel-item" *ngFor="let det of work?.content;let index=index" [class.active]="index===0">
+                          <img [src]="det"
+                               alt="" title="">
+                        </div>
+
+                      </div>
+                      <a class="carousel-control carousel-control-prev" role="button" data-slide="prev"
+                         href="#lb-gallery2-4"><span class="mbri-left mbr-iconfont" aria-hidden="true"></span><span
+                        class="sr-only">Previous</span></a><a class="carousel-control carousel-control-next" role="button"
+                                                              data-slide="next" href="#lb-gallery2-4"><span
+                      class="mbri-right mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Next</span></a><a
+                      class="close" href="#" role="button" data-dismiss="modal"><span class="sr-only">Close</span></a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+<app-not-found *ngIf="!spinning && work===null"></app-not-found>

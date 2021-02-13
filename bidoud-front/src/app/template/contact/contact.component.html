@@ -1,0 +1,93 @@
+<div class="container-contact100">
+  <div class="wrap-contact100">
+    <form class="contact100-form validate-form" (ngSubmit)="onSendMessage(f)" #f="ngForm">
+				<span class="contact100-form-title">
+					Get in touch
+				</span>
+      <label class="label-input100" for="first-name">Tell us your name *</label>
+      <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
+        <input id="first-name" class="input100" ngModel required type="text" name="firstname" placeholder="First name">
+        <span class="focus-input100"></span>
+      </div>
+      <div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
+        <input class="input100" type="text" name="lastname" ngModel required placeholder="Last name">
+        <span class="focus-input100"></span>
+      </div>
+
+      <label class="label-input100" for="email">Enter your email *</label>
+      <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+        <input id="email" class="input100" type="text" name="email" ngModel required  placeholder="Ex. example@domaine.com">
+        <span class="focus-input100"></span>
+      </div>
+
+      <label class="label-input100" for="phone">Enter phone number</label>
+      <div class="wrap-input100">
+        <input id="phone" class="input100" type="text" name="phone" ngModel required placeholder="Ex. +212666666666">
+        <span class="focus-input100"></span>
+      </div>
+
+      <label class="label-input100" for="message">Message *</label>
+      <div class="wrap-input100 validate-input" data-validate = "Message is required">
+        <textarea id="message" class="input100" name="message" ngModel required  placeholder="Write us a message"></textarea>
+        <span class="focus-input100"></span>
+      </div>
+
+      <div class="container-contact100-form-btn">
+        <button type="submit" [disabled]="f.invalid" class="btn btn-success">
+          <i class="fa fa-send"></i> Send Message
+        </button>
+      </div>
+    </form>
+
+    <div class="contact100-more flex-col-c-m" style="background-image: url('../../../assets/images/bg-01.jpg');">
+      <div class="flex-w size1 p-b-47">
+        <div class="txt1 p-r-25">
+          <span class="fa fa-map-marker"></span>
+        </div>
+
+        <div class="flex-col size2">
+						<span class="txt1 p-b-20">
+							Address
+						</span>
+
+          <span class="txt2">
+							Agadir Riad Salam Rue 315 n°2 , <strong>Maroc</strong>
+						</span>
+        </div>
+      </div>
+
+      <div class="dis-flex size1 p-b-47">
+        <div class="txt1 p-r-25">
+          <span class="fa fa-phone"></span>
+        </div>
+
+        <div class="flex-col size2">
+						<span class="txt1 p-b-20">
+							Lets Talk
+						</span>
+
+          <span class="txt3">
+							+212 654-135435
+						</span>
+        </div>
+      </div>
+
+      <div class="dis-flex size1 p-b-47">
+        <div class="txt1 p-r-25">
+          <span class="fa fa-envelope"></span>
+        </div>
+
+        <div class="flex-col size2">
+						<span class="txt1 p-b-20">
+							General Support
+						</span>
+
+          <span class="txt3">
+							amine.bidoud@gmail.com
+						</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

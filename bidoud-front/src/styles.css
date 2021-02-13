@@ -1,0 +1,89 @@
+@import "~ng-zorro-antd/style/index.min.css";
+@import "~ng-zorro-antd/button/style/index.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+.btn{
+  border-radius: 20em;
+  box-shadow: 0 2px 5px black;
+}
+.btn:hover{
+  box-shadow: 0 5px 10px black;
+  transition: 1s;
+}
+
+
+.mbr-text{
+  animation-name: droite;
+  animation-duration: 3000ms;
+  animation-delay: 0ms;
+  animation-timing-function: ease-in-out;
+}
+.mbr-text-2{
+  animation-name: droite;
+  animation-duration: 5000ms;
+  animation-delay: 0ms;
+  animation-timing-function: ease-in-out;
+}
+.hello{
+  animation-name: droite;
+  animation-duration: 2000ms;
+  animation-delay: 0ms;
+  animation-timing-function: ease-in-out;
+}
+.mbr-section-subtitle{
+  animation-name: droite;
+  animation-duration: 3000ms;
+  animation-delay: 0ms;
+  animation-timing-function: ease-in-out;
+}
+.flip-card,.service-box{
+  animation-name: bas;
+  animation-duration: 2000ms;
+  animation-delay: 0ms;
+  animation-timing-function: ease-in-out;
+}
+.text-muted{
+  animation-name: droite;
+  animation-duration: 4000ms;
+  animation-delay: 0ms;
+  animation-timing-function: ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+@keyframes droite{
+  0%{
+    transform: translateX(-10vh);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(-0px);
+    opacity: 1;
+  }
+}
+
+
+
+@keyframes bas{
+  0%{
+    transform: translateY(10vh);
+    opacity: 0.3;
+  }
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.spin{
+  display: none;
+}
+
+
+*{
+  font-family: Roboto;
+}

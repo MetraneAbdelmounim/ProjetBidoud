@@ -1,0 +1,42 @@
+<section class="menu cid-rba5WGFWjm" once="menu" id="menu2-8" style="opacity: 1" >
+
+  <nav class="navbar  navbar-expand-lg">
+
+      <a class="navbar-brand" routerLink=""><img src="../../../assets/images/logo.png" height="80" width="142"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav nav-dropdown navbar-nav-top-padding" data-app-modern-menu="true">
+        <li class="nav-item" [class.active]="isActive('')">
+          <a class="nav-link link display-4" routerLink="" >PORTFOLIO</a>
+        </li>
+        <li class="nav-item" [class.active]="isActive('about-me')">
+          <a class="nav-link link display-4" routerLink="about-me" >ABOUT ME</a>
+        </li>
+        <li class="nav-item"  [class.active]="isActive('services')">
+          <a class="nav-link link display-4" routerLink="services" >My Services</a>
+        </li>
+        <li class="nav-item dropdown" *ngIf="memberIsAuthenticated" [class.active]="isAdmin('admin')">
+          <a class="nav-link link display-4 dropdown-toggle"  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Administration
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+            <a class="dropdown-item" routerLink="admin-works">Admin Works</a>
+            <a class="dropdown-item" routerLink="admin-comments">Admin Comments</a>
+          </div>
+        </li>
+      </ul>
+      <div class="navbar-buttons mbr-section-btn"  *ngIf="!memberIsAuthenticated"><a class="btn btn-md  display-4" style="box-shadow: none;background-color: rgba(224,168,0,0.47);color: white" routerLink="contact-me">
+        CONTACT</a></div>
+      <div class="navbar-buttons mbr-section-btn"  *ngIf="memberIsAuthenticated" (click)="onLogout()"><a class="btn btn-md btn-danger display-4" style="box-shadow: none">
+        <i class="fa fa-sign-out"></i> Logout</a></div>
+    </div>
+  </nav>
+</section>

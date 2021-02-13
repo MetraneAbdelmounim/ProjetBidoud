@@ -1,0 +1,35 @@
+<div class="container-contact100">
+  <div class="wrap-contact100">
+    <form class="contact100-form validate-form" (ngSubmit)="onSignIn(f)" #f="ngForm">
+				<span class="contact100-form-title">
+					Sign in as Administrator
+				</span>
+
+      <label class="label-input100" for="email">Admin's username *</label>
+      <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+        <input id="email" class="input100" type="text" name="username" ngModel required  placeholder="username">
+        <span class="focus-input100"></span>
+      </div>
+
+      <label class="label-input100" for="phone">Admin's password</label>
+      <div class="wrap-input100">
+        <input id="phone" class="input100" type="password" name="password" ngModel required placeholder="password">
+        <span class="focus-input100"></span>
+      </div>
+
+      <div class="container-contact100-form-btn">
+        <button type="submit" [disabled]="f.invalid" class="btn btn-success" >
+         <i class="fa fa-sign-in"> </i> Sign in
+        </button>
+      </div>
+
+    </form>
+
+    <div class="contact100-more flex-col-c-m" style="background-image: url('../../assets/images/bg-01.jpg');">
+      <div class="flex-w size1 p-b-47">
+      </div>
+    </div>
+  </div>
+</div>
+
+

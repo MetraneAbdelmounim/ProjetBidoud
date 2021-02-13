@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+.article-container {
+
+  overflow: hidden;
+  position: relative;
+}
+.bg-cover {
+  width: 100%;
+  background: url(https://awik.io/demo/background-image-zoom/traffic2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation:move 10s alternate infinite;
+
+
+}
+.display-4{
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+}
+
+@keyframes move{
+  0%{
+    transform: scale(1) ;
+  }
+  100%{
+    transform: scale(1.2);
+
+  }
+}
+
+.flip-card {
+  width: 33.33%;
+  height: 300px;
+ /* Remove this if you don't want the 3D effect */
+}
+
+.title{
+  background-color: rgba(0, 0, 0, 0.12);
+  padding: 5px 0 5px 20px;
+  color: #000;
+  font-size: 25px;
+  font-family: "Roboto";
+  font-weight: bold;
+}
+.text-muted{
+  font-family: "Roboto";
+  font-size: 25px;
+}
+
+@media screen and (max-width:1055px) {
+  .flip-card {
+    width:33.33%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+@media screen and (max-width:911px) {
+  .flip-card {
+    width:50%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+  .display-4{
+    font-size: 50px;
+  }
+}
+@media screen and (max-width:716px) {
+  .flip-card {
+    width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+  .display-4{
+    font-size: 25px;
+  }
+}

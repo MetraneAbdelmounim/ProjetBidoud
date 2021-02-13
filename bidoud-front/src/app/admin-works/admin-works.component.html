@@ -1,0 +1,109 @@
+<nz-spin nzTip="Loading..." [nzSize]="'large'" style="margin-top: 25%;margin-bottom: 25%" [class.spin]="!spinning" [nzSpinning]="spinning">
+</nz-spin>
+<div *ngIf="!spinning">
+  <div class="container" style="margin-bottom: 140px">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-5">
+              <h2 style="font-weight: bold ; color: black">Works <b>Management</b></h2>
+            </div>
+            <div class="col-sm-7">
+              <a href="#" class="btn btn-group"  data-toggle="modal" data-target="#contact-modal" style="border-radius: 20rem"><i class="fa fa-plus-circle"></i> <span>Add New Work</span></a>
+            </div>
+          </div>
+        </div>
+        <table class="table table-striped table-hover">
+          <thead class="thead-dark">
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Categories</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let work of works|paginate:{id: 'listing_pagination',itemsPerPage: itemsPerPage, currentPage: page };let index=index">
+            <td>{{index+1}}</td>
+
+            <td>{{work?.title}}</td>
+            <td><a>Description</a></td>
+            <td>{{work?.categories}}</td>
+            <td>
+              <a  class="delete" title="delete" data-toggle="tooltip" (click)="ShowModale(work?._id,work?.title)"><i class="fa fa-remove"></i></a>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+        <div class="clearfix">
+
+          <ul class="pagination">
+            <pagination-controls class="paginationforum" [class.active]="'colorActive'"  id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <h3 style="font-weight: bold">Work Form</h3>
+          <a class="close" data-dismiss="modal">×</a>
+        </div>
+        <form id="contactForm" (ngSubmit)="onAddWork(f)" name="contact" role="form" #f="ngForm">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="title">title :</label>
+              <input type="text" id="title" ngModel required name="title" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="Categories">Categories :</label>
+              <input type="email" id="Categories" ngModel required  name="categories" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="description">Description :</label>
+              <quill-editor name="description" id="description" ngModel required [styles]="{height:'150px',fontSize:'15px'}"></quill-editor>
+            </div>
+            <div class="form-group">
+              <label >Images : </label>
+              <div class="form-control">
+                <div class="clearfix">
+                  <nz-upload
+                    nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                    nzListType="picture-card"
+                    [(nzFileList)]="fileList"
+                    [nzPreview]="handlePreview"
+                  >
+                    <div>
+                      <i class="fa fa-plus"></i>
+                      <div style="margin-top: 8px">Upload</div>
+                    </div>
+                  </nz-upload>
+                  <nz-modal [nzVisible]="previewVisible" [nzContent]="modalContent" [nzFooter]="null" (nzOnCancel)="previewVisible = false">
+                    <ng-template #modalContent>
+                      <img [src]="previewImage" [ngStyle]="{ width: '100%' }" />
+                    </ng-template>
+                  </nz-modal>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input type="submit" class="btn btn-success" value="Save" [disabled]="f.invalid" id="submit">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

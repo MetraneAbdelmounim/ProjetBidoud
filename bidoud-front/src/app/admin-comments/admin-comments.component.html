@@ -1,0 +1,78 @@
+<nz-spin nzTip="Loading..." [nzSize]="'large'" style="margin-top: 25%;margin-bottom: 25%" [class.spin]="!spinning" [nzSpinning]="spinning">
+</nz-spin>
+<div *ngIf="!spinning">
+  <div class="container" style="margin-bottom: 140px">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-5">
+              <h2>Comments <b>Management</b></h2>
+            </div>
+          </div>
+        </div>
+        <table class="table table-striped table-hover">
+          <thead class="thead-dark">
+          <tr>
+            <th><i class="fa fa-clock-o"></i> Received</th>
+            <th><i class="fa fa-user"></i> Name</th>
+            <th><i class="fa fa-envelope"></i> Email</th>
+            <th><i class="fa fa-phone"></i> Phone</th>
+            <th><i class="fa fa-comment"></i> Message</th>
+            <th><i></i> Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let comment of comments|paginate:{id: 'listing_pagination',itemsPerPage: itemsPerPage, currentPage: page };let index=index" [className]="checkClassName(comment?.stateVu)">
+            <td style="font-weight: bold;color: #1c7430">{{getDate(comment?.date)}}</td>
+            <td>{{comment?.firstname}} {{comment?.lastname}}</td>
+            <td>{{comment?.email}}</td>
+            <td>{{comment?.phone}}</td>
+            <td>
+              <a data-toggle="modal" style="color: #0e76a8 ;text-decoration-line: underline"  (click)="onFitched(comment)" data-target="#DialogComment" data-whatever="@mdo">Show Message</a>
+            </td>
+            <td>
+              <a class="delete" title="delete" data-toggle="tooltip" style="color: rgba(255,0,0,0.69)" (click)="ShowModale(comment?._id,comment?.message)"><i class="fa fa-remove"></i></a>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+        <div class="clearfix">
+
+          <ul class="pagination">
+            <pagination-controls class="paginationforum" [class.active]="'colorActive'"  id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" style="font-family: Arabic" id="DialogComment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel"><strong style="color: #000000">{{commentFitched?.firstname}} {{commentFitched?.lastname}}</strong> said</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="margin-top: 10px">
+
+          <div class="content" style="margin-left: 20px;margin-top: 10px">
+            <h5>
+              {{commentFitched?.message}}
+            </h5>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button *ngIf="!commentFitched?.stateVu" type="button" (click)="onUpdateState(commentFitched?._id)" class="btn btn-primary" data-dismiss="modal">mark as already read</button>
+          <button *ngIf="commentFitched?.stateVu" type="button" class="btn btn-danger" data-dismiss="modal">close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
