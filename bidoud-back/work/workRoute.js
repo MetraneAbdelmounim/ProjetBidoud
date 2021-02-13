@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
 
     },
     filename : function (req,file,cb) {
-        cb(null,path.join('BidoudAMINE'+Date.now().toString()+file.originalname.toString().replace(/\s/g, '')));
+        cb(null,path.join('BidoudAMINE'+Date.now().toString()+file.originalname.toString().replace(/\s/g, '').replace('-','')));
     }
 })
 

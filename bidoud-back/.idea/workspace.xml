@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f7867be-b0f0-405b-8055-fe36ab8afb44" name="Default Changelist" comment="" />
+    <list default="true" id="3f7867be-b0f0-405b-8055-fe36ab8afb44" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../bidoud-front/src/app/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../bidoud-front/src/app/home/home.component.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +16,18 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\LENOVO\Desktop\projet bidoud\bidoud-back\.idea" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1oHqG5X7cvVyHRI6wRMsGsKLAXH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -27,6 +40,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\LENOVO\Desktop\projet bidoud\bidoud-back" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -42,7 +60,7 @@
       <workItem from="1613042377110" duration="6043000" />
       <workItem from="1613130442097" duration="17243000" />
       <workItem from="1613176629496" duration="2315000" />
-      <workItem from="1613214421858" duration="2198000" />
+      <workItem from="1613214421858" duration="11020000" />
     </task>
     <servers />
   </component>

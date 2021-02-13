@@ -110,7 +110,7 @@
     width:50%; /* The width is 100%, when the viewport is 800px or smaller */
   }
   .mbr-text{
-    font-size: 50px;
+    font-size: 40px;
   }
 }
 @media screen and (max-width:716px) {
@@ -118,7 +118,10 @@
     width:100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
   .mbr-text{
-    font-size: 50px;
+    font-size: 30px;
+  }
+  .mbr-text-2{
+    font-size: 20px;
   }
 }
 

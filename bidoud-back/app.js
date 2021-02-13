@@ -13,8 +13,8 @@ const path = require('path');
 const PORT = config.PORT;
 const HOST = config.HOST;
 const app = express();
-
-const connectionUrl = config.bdUrl
+const fs =require('fs')
+const connectionUrl = config.atlasBdUrl
 
 mongoose
     .connect(connectionUrl
@@ -30,7 +30,12 @@ mongoose
     .catch(() => {
       console.log("Connection failed!");
     });
-
+try {
+    fs.mkdirSync(path.join(__dirname, 'uploads'))
+    fs.mkdirSync(path.join(__dirname, 'uploads/works'))
+} catch (err) {
+    if (err.code !== 'EEXIST') throw err
+}
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended : true}));
 app.use(cors());
@@ -39,7 +44,7 @@ app.use(logger('dev'));
 
 app.use('/uploads',express.static('uploads'));
 app.use('/',express.static(path.join(__dirname,'public')));
-
+app.use('/uploads',express.static(path.join(__dirname,'uploads')));
 app.get('', (req, res) => {
     res.sendFile(path.join(__dirname, 'public','index.html'));
 });
