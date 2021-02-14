@@ -27,6 +27,7 @@ export class AdminWorksComponent implements OnInit {
   fileList: NzUploadFile[] = []
   previewImage: string | undefined = '';
   previewVisible = false;
+  saving :boolean =false
   handlePreview = async (file: NzUploadFile) => {
     if (!file.url && !file.preview) {
       file.preview = await getBase64(file.originFileObj!);
@@ -49,7 +50,7 @@ export class AdminWorksComponent implements OnInit {
       this.message.info("You must choose at least one image !",{nzDuration:config.durationMessage})
     }
     else{
-      console.log(this.fileList);
+     this.saving=true
       let workData = new FormData();
       workData.append('title',f.value['title']);
       workData.append('description',f.value['description']);
@@ -61,9 +62,11 @@ export class AdminWorksComponent implements OnInit {
       this.workService.addWork(workData).subscribe((response:any)=>{
         f.reset()
         this.fileList=[]
+        this.saving=false
         this.message.success(response.message,{nzDuration:config.durationMessage})
         this.ngOnInit()
       },error => {
+        this.saving=false
         this.message.error("an error occurred , please try again !",{nzDuration:config.durationMessage})
       })
     }

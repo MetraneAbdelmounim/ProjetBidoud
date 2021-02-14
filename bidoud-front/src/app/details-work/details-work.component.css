@@ -31,8 +31,10 @@
 }
 
 .flip-card {
-  width: 33.33%;
+  width: 49.5%;
   height: 300px;
+  margin-left: 0.5%;
+  margin-top: 0.5%;
  /* Remove this if you don't want the 3D effect */
 }
 
@@ -49,20 +51,16 @@
   font-size: 25px;
 }
 
-@media screen and (max-width:1055px) {
-  .flip-card {
-    width:33.33%; /* The width is 100%, when the viewport is 800px or smaller */
-  }
-}
+
 @media screen and (max-width:911px) {
   .flip-card {
-    width:50%; /* The width is 100%, when the viewport is 800px or smaller */
-  }
+       width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+     }
   .display-4{
     font-size: 50px;
   }
 }
-@media screen and (max-width:716px) {
+@media screen and (max-width:600px) {
   .flip-card {
     width:100%; /* The width is 100%, when the viewport is 800px or smaller */
   }

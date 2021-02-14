@@ -22,7 +22,7 @@
 
       <label class="label-input100" for="phone">Enter phone number</label>
       <div class="wrap-input100">
-        <input id="phone" class="input100" type="text" name="phone" ngModel required placeholder="Ex. +212666666666">
+        <input id="phone" class="input100" type="text" name="phone" ngModel  placeholder="Ex. +212666666666">
         <span class="focus-input100"></span>
       </div>
 
@@ -33,9 +33,10 @@
       </div>
 
       <div class="container-contact100-form-btn">
-        <button type="submit" [disabled]="f.invalid" class="btn btn-success">
+        <button type="submit" *ngIf="!saving" [disabled]="f.invalid" class="btn btn-success">
           <i class="fa fa-send"></i> Send Message
         </button>
+        <button type="button" class="btn btn-danger" *ngIf="saving"><nz-spin nzSimple > </nz-spin></button>
       </div>
     </form>
 

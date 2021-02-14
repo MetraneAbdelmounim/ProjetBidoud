@@ -10,6 +10,7 @@ import {config} from '../../../Config/config'
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  saving: boolean=false;
 
   constructor(private messageService:MessageService , private message:NzMessageService) { }
 
@@ -20,11 +21,13 @@ export class ContactComponent implements OnInit {
 
 
   onSendMessage(f: NgForm) {
-
+    this.saving=true
     this.messageService.addMessage(f.value).subscribe((response:any)=>{
+      this.saving=false
       f.reset()
       this.message.success(response.message,{nzDuration:config.durationMessage})
     },error => {
+      this.saving=false
       this.message.error("an error occurred , please try again !",{nzDuration:config.durationMessage})
     })
   }
