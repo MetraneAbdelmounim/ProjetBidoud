@@ -54,7 +54,6 @@
               "./node_modules/quill/dist/quill.core.css",
               "./node_modules/quill/dist/quill.snow.css",
               "./node_modules/quill/dist/quill.bubble.css"
-
             ],
             "scripts": [
               "./node_modules/quill/core/quill.js",
@@ -152,6 +151,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "bidoud-front"
+    }
+  },
+  "defaultProject": "bidoud-front",
+  "cli": {
+    "analytics": "7aa96336-d5e0-40f6-9a07-aadbe052eb20"
+  }
 }

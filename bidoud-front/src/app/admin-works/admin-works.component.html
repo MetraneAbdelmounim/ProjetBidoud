@@ -29,7 +29,7 @@
             <td>{{index+1}}</td>
 
             <td>{{work?.title}}</td>
-            <td><a>Description</a></td>
+            <td><a [routerLink]="['/works',work?._id]">Description</a></td>
             <td>{{work?.categories}}</td>
             <td>
               <a  class="delete" title="delete" data-toggle="tooltip" (click)="ShowModale(work?._id,work?.title)"><i class="fa fa-remove"></i></a>
