@@ -4,7 +4,6 @@
     <list default="true" id="3f7867be-b0f0-405b-8055-fe36ab8afb44" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
@@ -72,22 +71,27 @@
       <workItem from="1613560268042" duration="1451000" />
       <workItem from="1613561738320" duration="1581000" />
       <workItem from="1613597579824" duration="2442000" />
-      <workItem from="1613639365152" duration="14000" />
+      <workItem from="1613639365152" duration="1658000" />
+      <workItem from="1613660917792" duration="138000" />
+      <workItem from="1613661080228" duration="1943000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.config" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="503" y="18" key="#Dockerfile" timestamp="1613560275650">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="503" y="18" key="#Dockerfile/0.0.1536.824@0.0.1536.824" timestamp="1613560275650" />
-    <state x="516" y="225" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1613561701198">
+    <state x="516" y="225" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1613661011264">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="516" y="225" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1613561701198" />
+    <state x="516" y="225" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1613661011264" />
     <state x="549" y="170" key="FileChooserDialogImpl" timestamp="1613475358951">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
