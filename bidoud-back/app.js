@@ -5,7 +5,7 @@ const fileUpload = require('express-fileupload');
 const logger = require('morgan');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const workRoute = require('./work/workRoute1')
+const workRoute = require('./work/workRoute')
 const messageRoute =require('./message/messageRoute')
 const authRoute =require('./auth/authRoute')
 const path = require('path');
@@ -13,7 +13,7 @@ const PORT = config.PORT;
 const HOST = config.HOST;
 const app = express();
 const fs =require('fs')
-const connectionUrl = config.atlasBdUrl
+const connectionUrl = config.bdUrl
 
 mongoose
     .connect(connectionUrl
