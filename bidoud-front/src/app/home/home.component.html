@@ -1,5 +1,10 @@
-<nz-spin nzTip="Loading..." [nzSize]="'large'" style="margin-top: 25%;margin-bottom: 25%" [class.spin]="!spinning" [nzSpinning]="spinning">
-</nz-spin>
+
+<div class="d-flex justify-content-center" style="margin-top: 20%;margin-bottom: 25%" [class.spin]="!spinning" *ngIf="spinning">
+    <img class="rotate" src="../../assets/images/logo.png"  height="50" width="120">
+
+</div>
+
+
 <div *ngIf="!spinning">
   <section class="mbr-parallax-background" id="header1-0" style="background: white ; margin-top: 5%">
 
