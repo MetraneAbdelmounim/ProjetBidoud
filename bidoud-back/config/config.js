@@ -3,8 +3,13 @@ module.exports = {
 
   HOST: process.env.HOST || '127.0.0.1',
   PORT: process.env.PORT || 5000,
-  bdUrl : "mongodb://mongo:27017/bidoudBD",
-  atlasBdUrl:"mongodb+srv://arram:arram@cluster0-3yvyb.mongodb.net/arramdb?retryWrites=true&w=majority",
+  bdUrl : "mongodb://localhost:27017/bidoudBD",
+  atlasBdUrl:"mongodb+srv://aminebidoud:aminebidoud@cluster0.fzqjb.mongodb.net/bidoudBD?retryWrites=true&w=majority",
   secret_token_key:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ",
-  token_expiration :"24h"
+  token_expiration :"24h",
+  cloudinary:{
+    name : "aminebidoud99",
+    api_key:"341377448546821",
+    api_secret:"dVzp-9r7SD6aeow720LtpdJFkjw"
+  }
 }
