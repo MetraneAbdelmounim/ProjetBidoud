@@ -7,17 +7,10 @@
       <change beforePath="$PROJECT_DIR$/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/3rdpartylicenses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/3rdpartylicenses.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/main.83c2364b404aa4e4ca72.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles.411bec6ef37331b023ea.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bidoud-front/src/app/admin-comments/admin-comments.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bidoud-front/src/app/admin-comments/admin-comments.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bidoud-front/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../bidoud-front/src/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bidoud-front/src/app/details-work/details-work.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bidoud-front/src/app/details-work/details-work.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bidoud-front/src/app/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../bidoud-front/src/app/home/home.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bidoud-front/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bidoud-front/src/app/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bidoud-front/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../bidoud-front/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +85,7 @@
       <workItem from="1614030551170" duration="22000" />
       <workItem from="1614030643924" duration="50000" />
       <workItem from="1614031026758" duration="1043000" />
+      <workItem from="1614032708719" duration="177000" />
     </task>
     <servers />
   </component>
