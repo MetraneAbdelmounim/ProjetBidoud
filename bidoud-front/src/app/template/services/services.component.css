@@ -1,7 +1,7 @@
 
 
 .services-section{
-  background: url(../../../assets/images/bg_services.jpg);
+  background: url(../../../assets/images/bg_services.png);
   background-size: cover;
   padding: 105px 0;
 }
@@ -88,4 +88,7 @@
 }
 .service-desc{
   visibility: hidden;
+}
+.service-title{
+  font-weight: bold;
 }

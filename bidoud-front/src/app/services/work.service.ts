@@ -24,4 +24,8 @@ export class WorkService {
   getWorkById(idWork: string) {
     return this.http.get(BACKEND_URL+'works/'+idWork)
   }
+
+  updateWork(_id: string, value: any) {
+    return this.http.put(BACKEND_URL+'works/'+_id,value)
+  }
 }

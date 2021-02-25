@@ -30,6 +30,7 @@ const fileFilter = (req,file,cb)=>{
     }
 };
 const upload =multer({storage:storage,
+    limit: Infinity,
     fileFilter : fileFilter
 });
 
@@ -37,4 +38,5 @@ router.get('/works',workController.getAllWorks);
 router.get('/works/:idWork',workController.getWorkById);
 router.post('/works',auth,upload.array('works'),workController.addWork);
 router.delete('/works/:idWork',auth,workController.deleteWork);
+router.put('/works/:idWork',auth,workController.updateWork);
 module.exports = router;

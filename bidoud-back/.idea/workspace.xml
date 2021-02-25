@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f7867be-b0f0-405b-8055-fe36ab8afb44" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/3rdpartylicenses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/3rdpartylicenses.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main.83c2364b404aa4e4ca72.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles.411bec6ef37331b023ea.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bidoud-front/src/app/admin-works/admin-works.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bidoud-front/src/app/admin-works/admin-works.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bidoud-front/src/app/admin-works/admin-works.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../bidoud-front/src/app/admin-works/admin-works.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bidoud-front/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bidoud-front/src/app/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bidoud-front/src/app/services/work.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../bidoud-front/src/app/services/work.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bidoud-front/src/app/template/contact/contact.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bidoud-front/src/app/template/contact/contact.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bidoud-front/src/app/template/services/services.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../bidoud-front/src/app/template/services/services.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bidoud-front/src/app/template/services/services.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bidoud-front/src/app/template/services/services.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bidoud-front/src/assets/images/bg_services.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +24,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -45,7 +44,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.20.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bidoud-front" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -86,6 +85,8 @@
       <workItem from="1614030643924" duration="50000" />
       <workItem from="1614031026758" duration="1043000" />
       <workItem from="1614032708719" duration="177000" />
+      <workItem from="1614272994753" duration="883000" />
+      <workItem from="1614284013209" duration="4773000" />
     </task>
     <servers />
   </component>
@@ -104,10 +105,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="225" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1613661011264" />
-    <state x="549" y="170" key="FileChooserDialogImpl" timestamp="1613475358951">
+    <state x="549" y="170" key="FileChooserDialogImpl" timestamp="1614289439993">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1613475358951" />
+    <state x="549" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1614289439993" />
     <state width="1537" height="218" key="GridCell.Tab.0.bottom" timestamp="1614030338163">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -156,9 +157,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1537" height="270" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1613483182326" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1613482084121">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1614273131066">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1613482084121" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1614273131066" />
   </component>
 </project>

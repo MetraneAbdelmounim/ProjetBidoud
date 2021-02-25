@@ -35,8 +35,8 @@ try {
 } catch (err) {
     if (err.code !== 'EEXIST') throw err
 }
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({extended : true}));
+app.use(bodyparser.json({limit: '500mb'}));
+app.use(bodyparser.urlencoded({limit: '500mb',extended : true}));
 app.use(cors());
 app.use(logger('dev'));
 

@@ -12,7 +12,7 @@
               <h2 style="font-weight: bold ; color: black">Works <b>Management</b></h2>
             </div>
             <div class="col-sm-7">
-              <a href="#" class="btn btn-group"  data-toggle="modal" data-target="#contact-modal" style="border-radius: 20rem"><i class="fa fa-plus-circle"></i> <span>Add New Work</span></a>
+              <a href="#" class="btn btn-group"  data-toggle="modal" data-target="#contact-modal" (click)="onAfterCreateWork()" style="border-radius: 20rem"><i class="fa fa-plus-circle"></i> <span>Add New Work</span></a>
             </div>
           </div>
         </div>
@@ -35,6 +35,7 @@
             <td>{{work?.categories}}</td>
             <td>
               <a  class="delete" title="delete" data-toggle="tooltip" (click)="ShowModale(work?._id,work?.title)"><i class="fa fa-remove"></i></a>
+              <a  class="" title="update" data-toggle="tooltip" data-toggle="modal" data-target="#contact-modal" (click)="onFitchWork(work)"><i class="fa fa-edit"></i></a>
             </td>
           </tr>
 
@@ -62,17 +63,20 @@
           <div class="modal-body">
             <div class="form-group">
               <label for="title">title :</label>
-              <input type="text" id="title" ngModel required name="title" class="form-control">
+              <input type="text" id="title" ngModel required name="title" class="form-control" *ngIf="type==='Create'">
+              <input type="text" id="title2" [ngModel]="editWork?.title" required name="title" class="form-control" *ngIf="type==='Edit'">
             </div>
             <div class="form-group">
               <label for="Categories">Categories :</label>
-              <input type="email" id="Categories" ngModel required  name="categories" class="form-control">
+              <input type="email" id="Categories" ngModel required  name="categories" class="form-control" *ngIf="type==='Create'">
+              <input type="email" id="Categories2" [ngModel]="editWork?.categories" required  name="categories" class="form-control" *ngIf="type==='Edit'">
             </div>
             <div class="form-group">
               <label for="description">Description :</label>
-              <quill-editor name="description" id="description" ngModel required [styles]="{height:'150px',fontSize:'15px'}"></quill-editor>
+              <quill-editor name="description" id="description" ngModel required [styles]="{height:'150px',fontSize:'15px'}" *ngIf="type==='Create'" ></quill-editor>
+              <quill-editor name="description" id="description2" [ngModel]="editWork?.description" required [styles]="{height:'150px',fontSize:'15px'}" *ngIf="type==='Edit'" ></quill-editor>
             </div>
-            <div class="form-group">
+            <div class="form-group" *ngIf="type==='Create'">
               <label >Images : </label>
               <div class="form-control">
                 <div class="clearfix">

@@ -55,6 +55,20 @@ module.exports = {
                     .catch(error => res.status(400).send( error ));
             })
             .catch(error => res.status(500).send(error ));
+    },
+    updateWork:function (req,res) {
+
+        Work.updateOne({ _id: req.params.idWork},req.body).then(result => {
+            if(result.nModified>=0){
+                res.status(200).json({ message: "Work Updated successfully !" });
+            }
+
+            else {
+                res.status(401).json({message : "Not authorized !"})
+            }
+
+        });
+
     }
 }
 
