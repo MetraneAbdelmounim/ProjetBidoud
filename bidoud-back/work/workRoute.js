@@ -29,9 +29,7 @@ const fileFilter = (req,file,cb)=>{
         cb(null,false);
     }
 };
-const upload =multer({storage:storage, limits: {
-        fileSize : 1200*1024*5
-    },
+const upload =multer({storage:storage,
     fileFilter : fileFilter
 });
 
