@@ -35,6 +35,7 @@ import {NzSpinModule} from 'ng-zorro-antd/spin';
 import {AuthInterceptorService} from './services/auth-interceptor.service';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import { WorksTagComponent } from './works-tag/works-tag.component';
 
 const icons: IconDefinition[] = [ PlusOutline,DeleteOutline ];
 
@@ -48,6 +49,7 @@ const appRoutes: Routes = [
   {path:'admin-comments' ,component: AdminCommentsComponent,canActivate:[AdminGuardService]},
   {path:'administrator' ,component: AdminSigninComponent},
   {path:'works/:idWork' ,component: DetailsWorkComponent},
+  {path:'works/tags/:categorie' ,component:WorksTagComponent},
   {path: 'not-found',component:NotFoundComponent},
   {path: '**',redirectTo:'not-found'}
 ]
@@ -65,7 +67,8 @@ const appRoutes: Routes = [
     AdminCommentsComponent,
     SafeHtmlPipe,
     AdminSigninComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    WorksTagComponent
   ],
   imports: [
     BrowserModule,

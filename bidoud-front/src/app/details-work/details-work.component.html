@@ -8,7 +8,7 @@
     <div class="jumbotron bg-cover text-white" [ngStyle]="{backgroundImage: 'url(' + work?.content[0] + ')'}">
       <div class="container py-5 text-center" style="background-color: rgba(0,0,0,0.31)">
         <h1 class="display-4 font-weight-bold">{{work?.title}}</h1>
-        <p class="mb-0" style="font-size: 19px">In {{work?.categories}}</p>
+        <p class="mb-0" style="font-size: 19px">In  <a style="font-weight: bold"   *ngFor="let cat of getCategories(work?.categories) ;let last=last" [routerLink]="['/works/tags',cat]">{{cat}} <strong *ngIf="!last"> , </strong></a></p>
         <!--<p class="font-italic" style="font-size: 20px">Snippe by
           <a href="https://bootstrapious.com" class="text-white">
             <u>Bootstrapious</u>

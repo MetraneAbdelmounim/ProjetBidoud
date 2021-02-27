@@ -69,6 +69,15 @@ module.exports = {
 
         });
 
+    },
+    getWorkTags:function (req,res) {
+
+        Work.find({categories : {$regex: new RegExp('.*' + req.params.categorie + '.*')}}).then(results=>{
+
+            if(results) res.status(200).json(results);
+        }).catch(err=>{
+            if(err) res.status(500).send('error : '+err);
+        })
     }
 }
 

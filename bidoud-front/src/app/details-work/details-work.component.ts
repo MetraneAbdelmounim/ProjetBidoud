@@ -31,4 +31,7 @@ export class DetailsWorkComponent implements  OnInit{
     })
   }
 
+  getCategories(categories: string) {
+    return categories?.split(',')
+  }
 }

@@ -28,4 +28,8 @@ export class WorkService {
   updateWork(_id: string, value: any) {
     return this.http.put(BACKEND_URL+'works/'+_id,value)
   }
+
+  getWorksByTag(tag: string) {
+    return this.http.get(BACKEND_URL+'works/tags/'+tag)
+  }
 }

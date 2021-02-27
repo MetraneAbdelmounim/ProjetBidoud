@@ -68,3 +68,12 @@
     font-size: 25px;
   }
 }
+.mb-0 a{
+  color: white;
+}
+
+.mb-0 a:hover{
+ color: rgba(224, 168, 0, 0.84);
+
+
+}
