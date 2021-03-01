@@ -24,7 +24,7 @@ export class WorksTagComponent implements OnInit {
         this.tag=params.get('categorie')
         this.workService.getWorksByTag(this.tag).subscribe((results:Array<Work>)=>{
           this.spinning=false
-          this.works=results
+          this.works=results.reverse()
         })
       }
     })

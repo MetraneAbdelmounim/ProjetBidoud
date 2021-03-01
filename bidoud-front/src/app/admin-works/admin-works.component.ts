@@ -42,54 +42,69 @@ export class AdminWorksComponent implements OnInit {
 
   ngOnInit(): void {
     this.type='Create'
-    this.editWork=null
-    this.workService.getAllWorks().subscribe((results:Array<Work>)=>{
-      this.spinning=false
-      this.works=results
+      this.editWork=null
+      this.workService.getAllWorks().subscribe((results:Array<Work>)=>{
+        this.spinning=false
+      this.works=results.reverse()
     })
   }
 
-  onAddWork(f: NgForm) {
+  onAddWork(f: NgForm,uploads:NzUploadFile[]) {
+        this.fileList=uploads
 
-
-      if(this.type==='Create'){
         if(this.fileList.length===0 ){
-          this.message.info("You must choose at least one image !",{nzDuration:config.durationMessage})
+          if (this.type==='Create'){
+            this.message.info("You must choose at least one image !",{nzDuration:config.durationMessage})
+            return
+          }
         }
         this.saving=true
         let workData = new FormData();
         workData.append('title',f.value['title']);
         workData.append('description',f.value['description']);
         workData.append('categories',f.value['categories']);
+
         for(const i in this.fileList){
           // @ts-ignore
+
           workData.append('works',this.fileList[i].originFileObj)
         }
-        this.workService.addWork(workData).subscribe((response:any)=>{
-          f.reset()
-          this.fileList=[]
-          this.saving=false
-          this.message.success(response.message,{nzDuration:config.durationMessage})
-          this.ngOnInit()
-        },error => {
-          this.saving=false
-          this.message.error("an error occurred , please try again !",{nzDuration:config.durationMessage})
-        })
-      }
-      else {
-        this.saving=true
-        this.workService.updateWork(this.editWork?._id,f.value).subscribe((response:any)=>{
-          f.reset()
-          this.saving=false
-          this.message.success(response.message,{nzDuration:config.durationMessage})
-          this.ngOnInit()
-        },error => {
-          this.saving=false
-          this.message.error("an error occurred , please try again !",{nzDuration:config.durationMessage})
-        })
-      }
-  }
 
+        if(this.type==='Create'){
+          this.workService.addWork(workData).subscribe((response:any)=>{
+            f.reset()
+            this.fileList=[]
+            this.saving=false
+            this.message.success(response.message,{nzDuration:config.durationMessage})
+            this.ngOnInit()
+          },error => {
+            this.saving=false
+            this.message.error("an error occurred , please try again !",{nzDuration:config.durationMessage})
+          })
+        }
+        else{
+
+          this.workService.updateWork(this.editWork?._id,workData).subscribe((response:any)=>{
+            f.reset()
+            this.saving=false
+            this.fileList=[]
+            this.message.success(response.message,{nzDuration:config.durationMessage})
+            this.ngOnInit()
+          },error => {
+            this.saving=false
+            this.message.error("an error occurred , please try again !",{nzDuration:config.durationMessage})
+          })
+        }
+
+
+  }
+   replacer(key, value) {
+    // Filtering out properties
+    if (typeof value === "object") {
+      return JSON.stringify(value);
+    }
+    return value;
+  }
   ShowModale(_id: string,title:string) {
     if(_id){
       this.modal.confirm({
@@ -119,6 +134,7 @@ export class AdminWorksComponent implements OnInit {
   onFitchWork(work: Work) {
     this.type='Edit'
     this.editWork = work
+
   }
 
   onAfterCreateWork() {

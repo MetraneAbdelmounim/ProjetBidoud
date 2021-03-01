@@ -25,8 +25,9 @@ export class WorkService {
     return this.http.get(BACKEND_URL+'works/'+idWork)
   }
 
-  updateWork(_id: string, value: any) {
-    return this.http.put(BACKEND_URL+'works/'+_id,value)
+  updateWork(_id: string, workData: FormData) {
+
+    return this.http.put(BACKEND_URL+'works/'+_id,workData)
   }
 
   getWorksByTag(tag: string) {

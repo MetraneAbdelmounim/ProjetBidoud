@@ -59,7 +59,7 @@
           <h3 style="font-weight: bold">Work Form</h3>
           <a class="close" data-dismiss="modal">×</a>
         </div>
-        <form id="contactForm" (ngSubmit)="onAddWork(f)" name="contact" role="form" #f="ngForm">
+        <form id="contactForm" (ngSubmit)="onAddWork(f,fileList)" name="contact" role="form" #f="ngForm">
           <div class="modal-body">
             <div class="form-group">
               <label for="title">title :</label>
@@ -76,10 +76,10 @@
               <quill-editor name="description" id="description" ngModel required [styles]="{height:'150px',fontSize:'15px'}" *ngIf="type==='Create'" ></quill-editor>
               <quill-editor name="description" id="description2" [ngModel]="editWork?.description" required [styles]="{height:'150px',fontSize:'15px'}" *ngIf="type==='Edit'" ></quill-editor>
             </div>
-            <div class="form-group" *ngIf="type==='Create'">
+            <div class="form-group">
               <label >Images : </label>
               <div class="form-control">
-                <div class="clearfix">
+                <div class="clearfix" >
                   <nz-upload
                     nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                     nzListType="picture-card"
@@ -98,8 +98,6 @@
                   </nz-modal>
                 </div>
               </div>
-
-
             </div>
           </div>
 

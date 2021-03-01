@@ -2,6 +2,7 @@ const  Work=require('./work')
 const fs = require('fs')
 module.exports = {
     addWork: function (req,res){
+
         const id = new mongoose.Types.ObjectId();
         const url = req.protocol + "://" + req.get("host");
         let contents=[];
@@ -13,7 +14,8 @@ module.exports = {
             title: req.body.title,
             description:req.body.description,
             categories : req.body.categories,
-            content:contents
+            content:contents,
+
         })
         newWork.save(newWork).then(createdWork=> {
             res.status(201).json({
@@ -58,16 +60,55 @@ module.exports = {
     },
     updateWork:function (req,res) {
 
-        Work.updateOne({ _id: req.params.idWork},req.body).then(result => {
-            if(result.nModified>=0){
-                res.status(200).json({ message: "Work Updated successfully !" });
-            }
+        Work.findOne({ _id: req.params.idWork })
+            .then((work) =>{
+                let upWork;
+               if(req.files.length>0 ){
 
-            else {
-                res.status(401).json({message : "Not authorized !"})
-            }
+                   work.content.forEach(c=>{
+                       const filename = c.split('/uploads/works/')[1];
+                       fs.unlinkSync(`uploads/works/${filename}`, () => {
+                           console.log("file deleted")
+                       });
+                    })
+                   const url = req.protocol + "://" + req.get("host");
+                   let contents=[];
+                   for(let work of req.files){
+                       contents.push(url + "/uploads/works/" +work.filename);
+                   }
+                    upWork = {
+                       title: req.body.title,
+                       description:req.body.description,
+                       categories : req.body.categories,
+                       content:contents,
 
-        });
+                   }
+               }
+               else{
+
+                   upWork = {
+                       title: req.body.title,
+                       description:req.body.description,
+                       categories : req.body.categories,
+                   }
+
+               }
+                Work.updateOne({ _id: req.params.idWork},upWork).then(result => {
+                    if(result.nModified>=0){
+                        res.status(200).json({ message: "Work Updated successfully !" });
+                    }
+
+                    else {
+                        res.status(401).json({message : "Not authorized !"})
+                    }
+
+                });
+            })
+            .catch(error =>{
+
+                res.status(400).send( error )
+            } );
+
 
     },
     getWorkTags:function (req,res) {

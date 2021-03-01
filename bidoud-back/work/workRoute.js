@@ -38,6 +38,6 @@ router.get('/works',workController.getAllWorks);
 router.get('/works/:idWork',workController.getWorkById);
 router.post('/works',auth,upload.array('works'),workController.addWork);
 router.delete('/works/:idWork',auth,workController.deleteWork);
-router.put('/works/:idWork',auth,workController.updateWork);
+router.put('/works/:idWork',auth,upload.array('works'),workController.updateWork);
 router.get('/works/tags/:categorie',workController.getWorkTags);
 module.exports = router;
