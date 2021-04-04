@@ -46,12 +46,16 @@ module.exports = {
     deleteWork: function (req,res) {
         Work.findOne({ _id: req.params.idWork })
             .then(work => {
-                work.content.forEach(c=>{
+                let forEach = work.content.forEach(c=>{
                     const filename = c.split('/uploads/works/')[1];
-                    fs.unlinkSync(`uploads/works/${filename}`, () => {
-                        console.log("file deleted")
-                    });
-                })
+                    try{
+                        fs.unlinkSync(`uploads/works/${filename}`)
+                    }catch (e) {
+                        console.log("error")
+                    }
+
+
+                });
                 Work.deleteOne({ _id: req.params.idWork })
                     .then(() => res.status(200).send({ message: 'Work deleted succesfully !'}))
                     .catch(error => res.status(400).send( error ));
@@ -67,9 +71,11 @@ module.exports = {
 
                    work.content.forEach(c=>{
                        const filename = c.split('/uploads/works/')[1];
-                       fs.unlinkSync(`uploads/works/${filename}`, () => {
-                           console.log("file deleted")
-                       });
+                       try{
+                           fs.unlinkSync(`uploads/works/${filename}`)
+                       }catch (e) {
+                           console.log("error")
+                       }
                     })
                    const url = req.protocol + "://" + req.get("host");
                    let contents=[];
