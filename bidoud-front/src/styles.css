@@ -3,10 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 .btn{
   border-radius: 20em;
-  box-shadow: 0 2px 5px black;
+
 }
 .btn:hover{
-  box-shadow: 0 5px 10px black;
+
   transition: 1s;
 }
 

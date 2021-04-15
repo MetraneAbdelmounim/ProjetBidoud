@@ -7,7 +7,7 @@
   color: rgba(0, 0, 0, 0.5);
 }
 .navbar-nav > .active > a {
-  color: #ffd507;
+  color: #000000;
 }
 .nav-item > a:hover {
   color: #ffd507;

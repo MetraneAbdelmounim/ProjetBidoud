@@ -71,7 +71,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button *ngIf="!commentFitched?.stateVu" type="button" (click)="onUpdateState(commentFitched?._id)" class="btn btn-primary" data-dismiss="modal">mark as already read</button>
+          <button *ngIf="!commentFitched?.stateVu" type="button" (click)="onUpdateState(commentFitched?._id)" class="btn" data-dismiss="modal" style="box-shadow: none;background-color: #000000;color:white">mark as already read</button>
           <button *ngIf="commentFitched?.stateVu" type="button" class="btn btn-danger" data-dismiss="modal">close</button>
         </div>
       </div>

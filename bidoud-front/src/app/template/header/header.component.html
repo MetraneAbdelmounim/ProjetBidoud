@@ -33,7 +33,7 @@
           </div>
         </li>
       </ul>
-      <div class="navbar-buttons mbr-section-btn"  *ngIf="!memberIsAuthenticated"><a class="btn btn-md  display-4" style="box-shadow: none;background-color: rgba(224,168,0,0.47);color: white" routerLink="contact-me">
+      <div class="navbar-buttons mbr-section-btn"  *ngIf="!memberIsAuthenticated"><a class="btn btn-md  display-4" style="box-shadow: none;background-color: rgb(0,0,0);color: white" routerLink="contact-me">
         CONTACT</a></div>
       <div class="navbar-buttons mbr-section-btn"  *ngIf="memberIsAuthenticated" (click)="onLogout()"><a class="btn btn-md btn-danger display-4" style="box-shadow: none">
         <i class="fa fa-sign-out"></i> Logout</a></div>
