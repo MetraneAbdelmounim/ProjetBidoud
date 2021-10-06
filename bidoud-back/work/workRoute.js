@@ -7,7 +7,7 @@ const auth =require('../middlewares/auth')
 const storage = multer.diskStorage({
     destination : function (req,file,cb) {
         if(file.mimetype==='image/jpeg' ||file.mimetype==='image/jpg' || file.mimetype ==='image/png' || file.mimetype==='image/gif' ){
-            cb(null,path.join('uploads/works'));
+            cb(null,path.join('upload'));
         }
 
 

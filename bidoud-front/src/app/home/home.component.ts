@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
     this.workService.getAllWorks().subscribe((results:Array<Work>)=>{
       this.spinning=false
       this.works = results.reverse()
+      console.log(this.works[0].content[0]);
     })
   }
 

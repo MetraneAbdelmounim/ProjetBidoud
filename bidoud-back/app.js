@@ -30,6 +30,7 @@ mongoose
       console.log("Connection failed!");
     });
 try {
+    fs.mkdirSync(path.join(__dirname, 'upload'))
     fs.mkdirSync(path.join(__dirname, 'uploads'))
     fs.mkdirSync(path.join(__dirname, 'uploads/works'))
 } catch (err) {

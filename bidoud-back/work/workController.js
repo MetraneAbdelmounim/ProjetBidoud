@@ -1,12 +1,24 @@
 const  Work=require('./work')
 const fs = require('fs')
+const sharp = require('sharp')
 module.exports = {
-    addWork: function (req,res){
+    addWork: async function (req,res){
 
         const id = new mongoose.Types.ObjectId();
         const url = req.protocol + "://" + req.get("host");
         let contents=[];
+
+
         for(let work of req.files){
+            const { filename: image } = work;
+            await sharp(work.path)
+                .jpeg({quality: 65})
+                .toFile(`uploads/works/${work.filename}`);
+            try{
+                fs.unlinkSync(`upload/${work.filename}`)
+            }catch (e) {
+                console.log("error")
+            }
             contents.push(url + "/uploads/works/" +work.filename);
         }
         let newWork = new Work({
@@ -17,6 +29,9 @@ module.exports = {
             content:contents,
 
         })
+
+
+
         newWork.save(newWork).then(createdWork=> {
             res.status(201).json({
                 message: "Work added successfully",
@@ -65,7 +80,7 @@ module.exports = {
     updateWork:function (req,res) {
 
         Work.findOne({ _id: req.params.idWork })
-            .then((work) =>{
+            .then(async (work) =>{
                 let upWork;
                if(req.files.length>0 ){
 
@@ -80,6 +95,15 @@ module.exports = {
                    const url = req.protocol + "://" + req.get("host");
                    let contents=[];
                    for(let work of req.files){
+                       const { filename: image } = work;
+                       await sharp(work.path)
+                           .jpeg({quality: 65})
+                           .toFile(`uploads/works/${work.filename}`);
+                       try{
+                           fs.unlinkSync(`upload/${work.filename}`)
+                       }catch (e) {
+                           console.log("error")
+                       }
                        contents.push(url + "/uploads/works/" +work.filename);
                    }
                     upWork = {
