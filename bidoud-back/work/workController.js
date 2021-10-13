@@ -12,7 +12,7 @@ module.exports = {
         for(let work of req.files){
             const { filename: image } = work;
             await sharp(work.path)
-                .jpeg({quality: 65})
+                .jpeg({quality: 50})
                 .toFile(`uploads/works/${work.filename}`);
             try{
                 fs.unlinkSync(`upload/${work.filename}`)
@@ -97,7 +97,7 @@ module.exports = {
                    for(let work of req.files){
                        const { filename: image } = work;
                        await sharp(work.path)
-                           .jpeg({quality: 65})
+                           .jpeg({quality: 50})
                            .toFile(`uploads/works/${work.filename}`);
                        try{
                            fs.unlinkSync(`upload/${work.filename}`)
