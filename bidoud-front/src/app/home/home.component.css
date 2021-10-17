@@ -129,4 +129,17 @@
     font-size: 20px;
   }
 }
+.mbr-text{
+  font-family: Roboto sans-serif;
+  color: transparent;
+  -webkit-text-stroke: 1px black;
+  background-image: url("../../assets/images/back.png");
+  -webkit-background-clip: text;
+  animation: back 15s linear infinite;
+}
 
+@keyframes back  {
+  100%{
+    background-position: 2000px 0;
+  }
+}
